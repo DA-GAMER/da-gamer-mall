@@ -2,6 +2,6 @@ spring:
   cloud:
     config:
       uri: http://localhost:9999
-      name: dagamer-mall-common-eureka-client-dev, dagamer-mall-order
+      name: dagamer-mall-common-eureka-client-dev, dagamer-mall-sso
       label: master
       profile: dev
