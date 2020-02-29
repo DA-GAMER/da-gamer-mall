@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: dagamer-mall-seckill
+
+server:
+  port: 8082
