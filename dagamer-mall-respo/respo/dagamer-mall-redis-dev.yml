@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: dagamer-mall-redis
+
+server:
+  port: 8084
