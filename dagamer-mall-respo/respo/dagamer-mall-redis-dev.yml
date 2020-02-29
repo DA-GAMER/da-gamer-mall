@@ -2,7 +2,7 @@ spring:
   application:
     name: dagamer-mall-redis
   redis:
-    host: 127.0.0.1
+    host: 192.168.31.139
     port: 6379
     lettuce:
       pool:
