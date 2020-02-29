@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: dagamer-mall-sso
+
+server:
+  port: 8083

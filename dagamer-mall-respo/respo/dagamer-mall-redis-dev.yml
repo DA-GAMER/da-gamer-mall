@@ -3,4 +3,4 @@ spring:
     name: dagamer-mall-redis
 
 server:
-  port: 8084
+  port: 6379
