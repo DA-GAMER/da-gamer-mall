@@ -3,4 +3,4 @@ spring:
     name: dagamer-mall-rabbitmq
 
 server:
-  port: 5672
+  port: 8092

@@ -1,6 +1,15 @@
 spring:
   application:
     name: dagamer-mall-redis
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        max-wait: -1ms
+        min-idle: 0
 
 server:
-  port: 6379
+  port: 8091
