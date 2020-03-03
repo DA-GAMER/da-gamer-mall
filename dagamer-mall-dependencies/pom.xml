@@ -21,11 +21,14 @@
         <java.version>1.8</java.version>
         <!-- Spring Cloud  -->
         <spring.cloud.version>Finchley.RELEASE</spring.cloud.version>
-        <!-- Spring Settings -->
-        <druid.version>1.1.16</druid.version>
         <!-- Environment Settings -->
+        <druid.version>1.1.16</druid.version>
         <mysql.version>5.1.46</mysql.version>
         <jackson.version>2.9.6</jackson.version>
+        <swagger.version>2.9.2</swagger.version>
+        <mybatis.plus.version>3.3.1.tmp</mybatis.plus.version>
+        <!-- Util -->
+        <commons.lang3.version>3.9</commons.lang3.version>
     </properties>
 
     <dependencyManagement>
@@ -60,7 +63,38 @@
                 <artifactId>jackson-databind</artifactId>
                 <version>${jackson.version}</version>
             </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
             <!-- Environment Settings End -->
+
+            <!-- Mybatis Plus Start -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis.plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
+                <version>${mybatis.plus.version}</version>
+            </dependency>
+            <!-- Mybatis Plus End -->
+
+            <!-- Util Start -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons.lang3.version}</version>
+            </dependency>
+            <!-- Util End -->
         </dependencies>
     </dependencyManagement>
 

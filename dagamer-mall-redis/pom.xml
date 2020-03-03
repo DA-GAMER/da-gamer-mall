@@ -14,7 +14,15 @@
     <artifactId>dagamer-mall-redis</artifactId>
     <packaging>jar</packaging>
 
+    <properties>
+        <dagamer.mall.version>0.0.1-SNAPSHOT</dagamer.mall.version>
+    </properties>
+
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>
@@ -22,6 +30,24 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.dagamer.mall.common.util</groupId>
+            <artifactId>dagamer-mall-common-util</artifactId>
+            <version>${dagamer.mall.version}</version>
         </dependency>
     </dependencies>
 

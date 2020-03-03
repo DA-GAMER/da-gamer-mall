@@ -2,6 +2,6 @@ spring:
   cloud:
     config:
       uri: http://localhost:9999
-      name: dagamer-mall-common-eureka-client-dev, dagamer-mall-rabbitmq
+      name: dagamer-mall-common-eureka-client, dagamer-mall-rabbitmq
       label: master
       profile: dev
