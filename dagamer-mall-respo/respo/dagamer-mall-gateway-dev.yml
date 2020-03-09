@@ -3,4 +3,4 @@ spring:
     name: dagamer-mall-gateway
 
 server:
-  port: 8899
+  port: 8888
