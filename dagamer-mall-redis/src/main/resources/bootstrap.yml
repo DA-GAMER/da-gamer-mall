@@ -1,7 +1,0 @@
-spring:
-  cloud:
-    config:
-      uri: http://localhost:9999
-      name: dagamer-mall-common-eureka-client-dev, dagamer-mall-redis
-      label: master
-      profile: dev

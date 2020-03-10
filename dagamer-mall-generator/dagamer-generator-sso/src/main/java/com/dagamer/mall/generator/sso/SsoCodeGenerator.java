@@ -8,9 +8,9 @@ import com.baomidou.mybatisplus.generator.config.*;
 import com.baomidou.mybatisplus.generator.config.po.TableInfo;
 import com.baomidou.mybatisplus.generator.config.rules.DateType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ResourceBundle;
+import org.apache.commons.lang3.StringUtils;
+
+import java.util.*;
 
 public class SsoCodeGenerator {
 
@@ -56,10 +56,10 @@ public class SsoCodeGenerator {
 
         /* 包名配置 */
         PackageConfig pc = new PackageConfig();
-        pc.setParent("com.dagamer.mall.generator.sso")
-                .setEntity("model/domain")
+        pc.setParent(rb.getString("package.parent"))
+                .setEntity("model.domain")
                 .setService("service")
-                .setServiceImpl("service/impl")
+                .setServiceImpl("service.impl")
                 .setMapper("mapper")
                 .setXml("mapper");
         mpg.setPackageInfo(pc);
@@ -68,7 +68,11 @@ public class SsoCodeGenerator {
         InjectionConfig cfg = new InjectionConfig() {
             @Override
             public void initMap() {
-                // to do nothing
+                Map<String, Object> map = new HashMap<>();
+                // 自定义配置，在模版中cfg.superColums 获取
+                // 这里解决子类会生成父类属性的问题，在模版里会用到该配置
+                map.put("superColumns", this.getConfig().getStrategyConfig().getSuperEntityColumns());
+                this.setMap(map);
             }
         };
 
@@ -88,18 +92,21 @@ public class SsoCodeGenerator {
 
         /* 模板配置 */
         TemplateConfig templateConfig = new TemplateConfig();
-        templateConfig.setController("").setXml(null);
+        templateConfig.setController(null)
+                .setEntity("/templates/entity.java.vm")
+                .setXml(null);
         mpg.setTemplate(templateConfig);
 
         /* 数据库表配置 */
         StrategyConfig strategy = new StrategyConfig();
         strategy.setNaming(NamingStrategy.underline_to_camel)
                 .setColumnNaming(NamingStrategy.underline_to_camel)
+                .setSuperEntityClass("com.dagamer.mall.common.domain.BaseDomain")
+                .setSuperEntityColumns("id","create_time","update_time")
                 .setEntityLombokModel(true)
                 .setRestControllerStyle(true)
-                .setInclude("uoc_user")
-                .setControllerMappingHyphenStyle(true)
-                .setTablePrefix(rb.getString("table_prefix"));
+                .setInclude(StringUtils.split(rb.getString("table.list"), ","))
+                .setControllerMappingHyphenStyle(true);
         mpg.setStrategy(strategy);
         mpg.execute();
     }

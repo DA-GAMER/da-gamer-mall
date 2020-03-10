@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dagamer.mall.sso.mapper.UacUserMapper">
+
+    <select id="login" resultType="UacUserDTO">
+        SELECT
+          id,
+          login_name,
+          login_pwd
+        FROM
+          uac_user
+        WHERE
+          login_name=#{loginName}
+    </select>
+
+</mapper>

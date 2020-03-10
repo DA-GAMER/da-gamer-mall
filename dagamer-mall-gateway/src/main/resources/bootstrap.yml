@@ -1,0 +1,37 @@
+spring:
+  cloud:
+    config:
+      uri: http://localhost:9999
+      name: dagamer-mall-common-eureka-client, dagamer-mall-gateway
+      label: master
+      profile: dev
+    gateway:
+      discovery:
+        locator:
+          enabled: false
+          lowerCaseServiceId: true
+      routes:
+        - id: dagamer-mall-user
+          uri: lb://DAGAMER-MALL-USER
+          predicates:
+           - Path=/u/**
+          filters:
+           - StripPrefix=1
+        - id: dagamer-mall-order
+          uri: lb://DAGAMER-MALL-ORDER
+          predicates:
+           - Path=/o/**
+          filters:
+           - StripPrefix=1
+        - id: dagamer-mall-sso
+          uri: lb://DAGAMER-MALL-SSO
+          predicates:
+           - Path=/s/**
+          filters:
+           - StripPrefix=1
+        - id: dagamer-mall-seckill
+          uri: lb://DAGAMER-MALL-SECKILL
+          predicates:
+           - Path=/sec/**
+          filters:
+           - StripPrefix=1

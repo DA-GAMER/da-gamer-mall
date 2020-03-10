@@ -11,9 +11,6 @@
 
     <artifactId>dagamer-generator-sso</artifactId>
     <packaging>jar</packaging>
-
-    <dependencies>
-
-    </dependencies>
+    <name>dagamer-generator-sso</name>
 
 </project>

@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    config:
+      uri: http://localhost:9999
+      name: dagamer-mall-common-eureka-client, dagamer-mall-common-feign, dagamer-mall-user
+      label: master
+      profile: dev
+
+logging:
+  config: classpath:logback-spring.xml
+  path: D:/project_log/da_gamer_mall_user_logs

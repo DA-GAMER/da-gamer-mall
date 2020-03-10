@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      uri: http://localhost:9999
+      name: dagamer-mall-common-eureka-client, dagamer-mall-common-feign, dagamer-mall-sso
+      label: master
+      profile: dev

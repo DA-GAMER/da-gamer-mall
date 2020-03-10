@@ -15,6 +15,10 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
+    <properties>
+        <dagamer.mall.version>0.0.1-SNAPSHOT</dagamer.mall.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.apache.velocity</groupId>
@@ -33,6 +37,23 @@
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-generator</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.dagamer.mall.common.domain</groupId>-->
+            <!--<artifactId>dagamer-mall-common-domain</artifactId>-->
+            <!--<version>${dagamer.mall.version}</version>-->
+        <!--</dependency>-->
     </dependencies>
 
 </project>
